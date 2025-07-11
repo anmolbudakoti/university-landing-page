@@ -23,10 +23,11 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
+  root: "client",
   build: {
-    outDir: "dist",
+    outDir: "../dist",
   },
-  base: "/university-landing-page/", // ✅ required for GitHub Pages
+  base: "/university-landing-page/",
   server: {
     fs: {
       strict: true,
