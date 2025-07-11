@@ -11,7 +11,7 @@ export default defineConfig({
     process.env.REPL_ID !== undefined
       ? [
           await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
+            m.cartographer()
           ),
         ]
       : []),
@@ -23,16 +23,14 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
-  root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
-    emptyOutDir: true,
+    outDir: "dist",
   },
+  base: "/university-landing-page/", // ✅ required for GitHub Pages
   server: {
     fs: {
       strict: true,
       deny: ["**/.*"],
     },
   },
-  base: '/university-landing-page/'
 });
